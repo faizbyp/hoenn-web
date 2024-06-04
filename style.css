@@ -11,14 +11,21 @@
   --ball-black: #222224;
   --ball-white: #f0f0f0;
   --h1: bold 4rem/4rem var(--ff);
+  --h2: bold 3rem/3rem var(--ff);
 }
 
 body {
   font-family: var(--ff);
+  background-color: var(--ball-white);
 }
 
 h1 {
   font: var(--h1);
+  margin-bottom: 12px;
+}
+
+h2 {
+  font: var(--h2);
   margin-bottom: 12px;
 }
 
@@ -43,15 +50,31 @@ img {
   width: 100%;
 }
 
+.column-3 > * {
+  text-align: center;
+}
+
 @media only screen and (min-width: 720px) {
   .container {
     flex-direction: row;
   }
 
-  .container > * {
-    padding: 10px;
+  .column-2 > * {
     width: 50%;
   }
+
+  .column-3 > * {
+    width: 33%;
+    text-align: center;
+  }
+}
+
+.pill {
+  /* border: solid 2px var(--ball-red); */
+  background-color: var(--ball-red);
+  color: var(--ball-white);
+  border-radius: 8px;
+  padding: 4px 6px;
 }
 
 #hero {
