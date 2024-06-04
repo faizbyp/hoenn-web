@@ -23,6 +23,12 @@ function getPokemon(poke) {
       $(`#${poke} > img`).attr("src", data.sprites.front_default);
       $(`#${poke} > img`).attr("alt", data.name);
       $(`#${poke} > h3`).append(capitalize(data.name));
+
+      const types = data.types;
+      console.log(types);
+      types.forEach(function (t) {
+        $(`#${poke}`).append(`<span class="pill">${capitalize(t.type.name)}</span>`);
+      });
     },
   });
 }

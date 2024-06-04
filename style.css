@@ -102,6 +102,7 @@ hr {
   color: var(--ball-white);
   border-radius: 8px;
   padding: 4px 6px;
+  margin: 4px;
 }
 
 #hero {
