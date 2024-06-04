@@ -52,6 +52,32 @@
   margin: 4px;
 }
 
+.ball-top {
+  background-color: var(--ball-red);
+  height: 48px;
+  border: 4px solid var(--ball-black);
+  border-radius: 32px 32px 0 0;
+}
+
+.ball-mid {
+  background-color: var(--ball-black);
+  height: 36px;
+  border: 4px solid var(--ball-black);
+}
+
+.ball-mid > p,
+.ball-mid > p > a {
+  text-align: center;
+  color: var(--ball-white);
+}
+
+.ball-bot {
+  background-color: var(--ball-white);
+  height: 48px;
+  border: 4px solid var(--ball-black);
+  border-radius: 0 0 32px 32px;
+}
+
 #hero {
   background-color: var(--ball-black);
   color: var(--ball-white);

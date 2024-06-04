@@ -50,3 +50,7 @@ hr {
   margin: 16px 0;
   border-color: var(--ball-red);
 }
+
+footer {
+  margin: 0 24px;
+}
