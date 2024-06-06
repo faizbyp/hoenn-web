@@ -82,6 +82,12 @@
   display: inline-flex;
   margin: 12px 24px;
   padding: 6px 12px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.loc-item:hover {
+  scale: 1.1;
 }
 
 #locations {
@@ -105,13 +111,14 @@
   color: var(--ball-white);
   padding: 12px 16px;
   border-radius: 12px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: var(--ball-black);
+  transition: var(--transition);
 }
 
 #evolve:hover {
   background-color: var(--ball-white);
-  border-style: solid;
-  border-width: 2px;
-  border-color: var(--ball-black);
   color: var(--ball-black);
   cursor: pointer;
 }

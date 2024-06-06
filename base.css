@@ -14,6 +14,7 @@
   --h2: bold 3rem/3rem var(--ff);
   --h3: bold 2rem/2rem var(--ff);
   --p: normal 1rem/1.5rem var(--ff);
+  --transition: 0.1s;
 }
 
 body {
@@ -44,6 +45,7 @@ p {
 img {
   width: 100%;
   border-radius: 20px;
+  transition: var(--transition);
 }
 
 img:hover {

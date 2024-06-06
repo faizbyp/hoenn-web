@@ -7,19 +7,21 @@ function getPokemon(type, poke) {
     url: `https://pokeapi.co/api/v2/pokemon/${poke}`,
     method: "GET",
     cache: true,
-    success: function (data) {
+  })
+    .then(function (data) {
       $(`#${type} > img`).attr("src", data.sprites.front_default);
       $(`#${type} > img`).attr("alt", data.name);
       $(`#${type} > h3`).text(capitalize(data.name));
 
       const types = data.types;
-      console.log(types);
       $(`#${type} > span`).remove();
       types.forEach(function (t) {
         $(`#${type}`).append(`<span class="pill">${capitalize(t.type.name)}</span>`);
       });
-    },
-  });
+    })
+    .then(function () {
+      $("#starter > .container > .row > *").stop().animate({ opacity: 1, scale: 1 }, 200);
+    });
 }
 
 function getLocations() {
@@ -28,7 +30,6 @@ function getLocations() {
     method: "GET",
     cache: true,
     success: function (response) {
-      console.log(response);
       const locations = response.results;
       const colors = ["#228B22", "#1E90FF", "#8B4513"];
       var colorIndex = 0;
@@ -71,13 +72,13 @@ $(document).ready(function () {
     }
 
     pokeIndex = (pokeIndex + 1) % 3;
-    $("#starter > .container > .row > *").css("scale", "1");
-    $("#starter > .container > .row > *").animate({ opacity: 0, scale: 0.9 }, duration);
-    setTimeout(() => {
-      getPokemon("grass", grassPoke[pokeIndex]);
-      getPokemon("fire", firePoke[pokeIndex]);
-      getPokemon("water", waterPoke[pokeIndex]);
-    }, duration);
-    $("#starter > .container > .row > *").animate({ opacity: 1, scale: 1 }, duration);
+
+    $("#starter > .container > .row > *")
+      .stop()
+      .animate({ opacity: 0, scale: 0.95 }, duration, function () {
+        getPokemon("grass", grassPoke[pokeIndex]);
+        getPokemon("fire", firePoke[pokeIndex]);
+        getPokemon("water", waterPoke[pokeIndex]);
+      });
   });
 });
