@@ -48,7 +48,7 @@ function getLocations() {
 }
 
 $(document).ready(function () {
-  $("#hero > *").hide().fadeIn(1000);
+  $("#hero > *").hide().fadeIn(1500);
 
   const grassPoke = ["treecko", "grovyle", "sceptile"];
   const firePoke = ["torchic", "combusken", "blaziken"];
@@ -58,6 +58,9 @@ $(document).ready(function () {
   getPokemon("grass", grassPoke[pokeIndex]);
   getPokemon("fire", firePoke[pokeIndex]);
   getPokemon("water", waterPoke[pokeIndex]);
+  getLocations();
+
+  $("#starter > *").hide().fadeIn(2000);
 
   $("#evolve").on("click", function () {
     if (pokeIndex === 1) {
@@ -71,6 +74,4 @@ $(document).ready(function () {
     getPokemon("fire", firePoke[pokeIndex]);
     getPokemon("water", waterPoke[pokeIndex]);
   });
-
-  getLocations();
 });
