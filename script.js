@@ -53,6 +53,7 @@ $(document).ready(function () {
   const grassPoke = ["treecko", "grovyle", "sceptile"];
   const firePoke = ["torchic", "combusken", "blaziken"];
   const waterPoke = ["mudkip", "marshtomp", "swampert"];
+  const duration = 200;
   var pokeIndex = 0;
 
   getPokemon("grass", grassPoke[pokeIndex]);
@@ -70,8 +71,13 @@ $(document).ready(function () {
     }
 
     pokeIndex = (pokeIndex + 1) % 3;
-    getPokemon("grass", grassPoke[pokeIndex]);
-    getPokemon("fire", firePoke[pokeIndex]);
-    getPokemon("water", waterPoke[pokeIndex]);
+    $("#starter > .container > .row > *").css("scale", "1");
+    $("#starter > .container > .row > *").animate({ opacity: 0, scale: 0.9 }, duration);
+    setTimeout(() => {
+      getPokemon("grass", grassPoke[pokeIndex]);
+      getPokemon("fire", firePoke[pokeIndex]);
+      getPokemon("water", waterPoke[pokeIndex]);
+    }, duration);
+    $("#starter > .container > .row > *").animate({ opacity: 1, scale: 1 }, duration);
   });
 });
