@@ -47,6 +47,8 @@ $(document).ready(function () {
 
         colorIndex = (colorIndex + 1) % colors.length;
       });
+
+      $("<li>and many more</li>").attr("class", "loc-item").appendTo("#locations");
     },
   });
 });
