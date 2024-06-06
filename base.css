@@ -46,6 +46,10 @@ img {
   border-radius: 20px;
 }
 
+img:hover {
+  scale: 1.03;
+}
+
 hr {
   margin: 16px 0;
   border-width: 2px;
