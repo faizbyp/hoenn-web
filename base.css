@@ -60,3 +60,7 @@ footer {
   padding: 24px 24px;
   background-color: var(--ball-black);
 }
+
+button {
+  all: unset;
+}
