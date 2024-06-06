@@ -28,4 +28,25 @@ $(document).ready(function () {
   getPokemon("treecko");
   getPokemon("torchic");
   getPokemon("mudkip");
+
+  $.ajax({
+    url: "https://pokeapi.co/api/v2/location?offset=417&limit=30",
+    method: "GET",
+    cache: true,
+    success: function (response) {
+      console.log(response);
+      const locations = response.results;
+      const colors = ["#228B22", "#1E90FF", "#8B4513"];
+      var colorIndex = 0;
+
+      locations.forEach(function (loc) {
+        const location = $(`<li>${loc.name}</li>`)
+          .attr("class", "loc-item")
+          .css({ "background-color": colors[colorIndex], "border-radius": "8px", color: "white" });
+        location.appendTo("#locations");
+
+        colorIndex = (colorIndex + 1) % colors.length;
+      });
+    },
+  });
 });

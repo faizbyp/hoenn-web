@@ -78,6 +78,17 @@
   border-radius: 0 0 32px 32px;
 }
 
+.loc-item {
+  display: inline-flex;
+  margin: 12px 24px;
+  padding: 6px 12px;
+}
+
+#locations {
+  padding: 0;
+  text-align: center;
+}
+
 #hero {
   background-color: var(--ball-black);
   color: var(--ball-white);
